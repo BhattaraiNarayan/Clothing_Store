@@ -1,0 +1,122 @@
+/* Removing Default Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+/**
+* !navbar styles start here
+**/
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #212529;
+    color: white;
+    padding: 25px 60px;
+    margin-bottom: 30px;
+}
+.cart{
+    position: relative;
+    background-color: #fff;
+    color: #212529;
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.cartAmount{
+    position: absolute;
+    right: -8px;
+    top: -13px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+}
+.footer {
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+/**
+*! Shopping Cart Styles
+**/
+.shop{
+    display: grid;
+    grid-template-columns: repeat(5,220px);
+    gap: 35px;
+    justify-content: center;
+}
+
+.item{
+    border: 2px solid #212529;
+    border-radius: 4px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+.price-quantity{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.bi-dash-lg{
+    color: red;
+}
+.bi-plus-lg{
+    color: green;
+}
+
+i{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/**
+*! Style rules for label and some buttons
+**/
+.text-center{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.HomeBtn{
+    background-color: #212529;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+@media (max-width:1000px){
+    .shop{
+        grid-template-columns: repeat(2,220px);
+    }
+}
+@media (max-width:600px){
+    .shop{
+        grid-template-columns: repeat(1,220px);
+    }
+}
