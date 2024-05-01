@@ -12,14 +12,14 @@ let generateShop=()=>{
         
         return `
         <div id=product-id-${id} class="item">
-            <img width="200" height="200" src=${img} alt="">
+            <img width="200" height="200" src=${img} alt="" class="img">
             <div class="details">
                 <h3>${name}</h3>
                 <p>${desc}</p>
                 <div class="price-quantity">
                     <h2>¥ ${price}</h2>
                     <div class="buttons">
-                        <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                        <i onclick="decrement(${id})" class="bi bi-trash3"></i>
                         <div id=${id} class="quantity">
                           ${search.item === undefined ? 0 : search.item}
                         </div>
@@ -77,5 +77,4 @@ let calculation = () => {
   let cartIcon = document.getElementById("cartAmount");
   cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
-
 calculation();
