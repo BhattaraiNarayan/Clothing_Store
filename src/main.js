@@ -15,7 +15,7 @@ let generateShop=()=>{
             <img width="200" height="200" src=${img} alt="" class="img">
             <div class="details">
                 <h3>${name}</h3>
-                <p>${desc}</p>
+                <p class="para">${desc}</p>
                 <div class="price-quantity">
                     <h2>¥ ${price}</h2>
                     <div class="buttons">
@@ -52,6 +52,8 @@ let increment=(id)=>{
     localStorage.setItem("data", JSON.stringify(basket));
   };
 
+
+
 let decrement = (id) => {
 //  let selectedItem = id;
   let search = basket.find((x) => x.id === id);
@@ -61,11 +63,15 @@ let decrement = (id) => {
   else {
     search.item -= 1;
   }
+
+
  update(id);
  basket = basket.filter((x) => x.item !== 0);    //to delete the item which is zero in local storage
  // console.log(basket);
  localStorage.setItem("data", JSON.stringify(basket));
 };
+
+
 let update =(id)=>{
   let search = basket.find((x) => x.id === id);
   console.log(search.item);
