@@ -25,12 +25,14 @@ let generateCartItems=()=>{
                                         <p>${search.name}</p>
                                         <p class="cart-item-price">¥ ${search.price}</p>
                                     </h4>
-                                    <i class="bi bi-x-lg"></i>
+                                    <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
                                 </div>
-                            <div class="cart-buttons">
-
+                            <div class="buttons">
+                                <i onclick="decrement(${id})" class="bi bi-trash3"></i>
+                                <div id=${id} class="quantity">${item}</div>
+                            <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
                             </div>
-                            <h3></h3>
+                            <h3>¥ ${item * search.price}</h3>
                         </div>
                 </div>
             `;
@@ -49,3 +51,51 @@ let generateCartItems=()=>{
 
 };
 generateCartItems();
+
+let increment = (id) => {
+  // let selectedItem=id;
+  let search = basket.find((x) => x.id === id);
+
+  if (search === undefined) {
+    basket.push({
+      id: id,
+      item: 1,
+    });
+  } else {
+    search.item += 1;
+  }
+ generateCartItems();
+  update(id);
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+let decrement = (id) => {
+  //  let selectedItem = id;
+  let search = basket.find((x) => x.id === id);
+
+  if (search === undefined) return;
+  else if (search.item === 0) return;
+  else {
+    search.item -= 1;
+  }
+
+  update(id);
+  basket = basket.filter((x) => x.item !== 0); //to delete the item which is zero in local storage
+ generateCartItems();
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+let update = (id) => {
+  let search = basket.find((x) => x.id === id);
+  console.log(search.item);
+  document.getElementById(id).innerHTML = search.item;
+  calculation();
+};
+
+let removeItem=(id)=>{
+    let selectedItem=id;
+    basket=basket.filter((x)=>x.id!==selectedItem);
+    generateCartItems();
+     localStorage.setItem("data", JSON.stringify(basket));
+}
+

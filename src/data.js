@@ -22,7 +22,7 @@ let shopItemsData = [
   },
   {
     id: 4,
-    name: "Leather Jacket",
+    name: "Jacket",
     price: 5999,
     desc: "Stylish leather Jacket",
     img: "images/jacket4.jpg",
