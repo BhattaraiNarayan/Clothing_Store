@@ -17,7 +17,7 @@ let shopItemsData = [
     id: 3,
     name: "Summer coat",
     price: 5149,
-    desc: "High-quality wireless headphones with over-ear design",
+    desc: "High-quality wireless headphones with over-ear",
     img: "images/jacket3.jpg",
   },
   {
