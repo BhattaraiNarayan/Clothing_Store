@@ -1,4 +1,6 @@
 let checkout = document.getElementById("checkout");
+let name=document.getElementById("name");
+let address=document.getElementById("address");
 
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 // console.log(basket)
@@ -10,7 +12,6 @@ let calculation = () => {
 calculation();
 
 
-
 let checkOut = () => {
   let totalAmount = JSON.parse(localStorage.getItem("totalAmount"));
   // Now you can use the totalAmount parameter here in the checkout function
@@ -18,7 +19,7 @@ let checkOut = () => {
   // Further logic for checkout
   return (checkout.innerHTML = `
   <div>
-    <h1>Your Total Amount is: ¥ ${totalAmount}<br /></h1>
+    <h1>Your Bill is: ¥ ${totalAmount}<br /></h1>
     <h2>To Proceed to Payment.Insert below Information.</h2>
   </div>`);
 };
