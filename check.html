@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <link rel='icon' href='favicon.ico'>
+    <link rel='stylesheet' href='src/style.css'>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <div  class="navbar">
+        <a href="index.html">
+             <h2>Shopping Cart</h2>
+        </a>
+        <a href="cart.html">
+            <div class="cart">
+                <i class="bi bi-cart2"></i>
+                <div id="cartAmount" class="cartAmount"></div>
+            </div>
+        </a>
+    </div>
+  
+    <div id="checkout" class="text-center"></div>
+    <div class="container">
+        <h3>Checkout Page</h3>
+        <form id="checkout-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" type="textarea" required></textarea>
+            </div>
+            <hr><br />
+            <h3>Payment Information</h3>
+            <div class="form-group">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- footer starts -->
+        <footer class="footer2">
+          <p>&copy;2024&nbsp;Design and Code by NarayanTechGroup</p>
+        </footer>
+<!-- footer ends -->
+</body>
+<script src="src/check.js" defer></script>
+</html>
